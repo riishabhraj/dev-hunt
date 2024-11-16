@@ -1,0 +1,95 @@
+h2 {
+   padding-bottom: 10px;
+   margin-bottom: 20px;
+   text-align: center;
+   color: #CFCFCF;
+}
+
+h3 {
+   margin-top: 20px;
+   text-align: center;
+   color: #CFCFCF;
+}
+
+.word-grid {
+   display: flex;
+   flex-direction: column;
+   border: 3px solid #CFCFCF;
+   border-radius: 8px;
+   max-width: 620px;
+   margin: 20px auto;
+}
+
+.words-to-find-grid {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);  /* Creates 5 columns */
+   grid-gap: 10px;
+   justify-items: center;
+   margin: 20px auto;
+   width: calc(100% - 60px); /* Adjust the 60px to match the actual padding */
+}
+
+.word-item {
+   text-align: center;
+   color: #CFCFCF;
+}
+
+.grid-row {
+   display: flex;
+   justify-content: center;
+}
+
+.grid-letter {
+   width: 50px;
+   height: 50px;
+   font-size: 2em; /* Adjusted font size */
+   color: #CFCFCF; /* Adjusted font color */
+   border: none;
+   background-color: #212121; /* Adjusted background color to match the container */
+   text-align: center;
+   line-height: 50px;
+   cursor: pointer;
+   transition: background-color 0.2s, color 0.2s;
+   padding: 0;
+   margin: 0;
+}
+
+.grid-letter:hover {
+   background-color: rgb(69, 69, 69);
+   color: white;
+}
+
+.grid-letter.selected {
+   color: green;
+}
+
+.grid-letter.success {
+   color: #FFBE1A;
+}
+
+/* Mobile View */
+@media only screen and (max-width: 768px) {
+  .word-grid {
+    max-width: 90vw; /* Set a max-width that suits mobile */
+    margin: 10px auto;
+  }
+
+  .grid-letter {
+    width: 7.5vw; /* Each letter is 7.5% of the viewport width */
+    height: 7.5vw; /* Same for height to maintain a square */
+    font-size: 3.5vw; /* Adjust font size accordingly */
+    line-height: 7.5vw; /* Center the letter vertically */
+  }
+
+  .words-to-find-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Adjust the min size as needed */
+    justify-items: start;
+    grid-gap: 2px;
+    margin: 0px auto;
+  }
+  
+   html {
+      font-size: 14px; /* Adjust base font size for mobile */
+   }
+  
+}
